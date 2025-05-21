@@ -1,0 +1,13 @@
+<nav>
+  <h2>Budget Guard</h2>
+  <img src="../../assets/logo.png" alt="logo" />
+  <a routerLink="/dashboard" routerLinkActive="active">Strona główna</a>
+  <div class="horizontal-line"></div>
+  <a routerLink="/reports" routerLinkActive="active">Wykresy</a>
+  <div class="horizontal-line"></div>
+  <a routerLink="/add" routerLinkActive="active">Dodaj wydatek</a>
+  <div class="horizontal-line"></div>
+  <a (click)="userService.toggleTheme()" style="cursor: pointer">{{
+    userService.isDarkMode() ? "Tryb jasny" : "Tryb ciemny"
+  }}</a>
+</nav>

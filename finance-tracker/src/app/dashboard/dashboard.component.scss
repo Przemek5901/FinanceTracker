@@ -1,0 +1,55 @@
+.dashboard-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.account-summary {
+  flex: 1;
+  background-color: var(--green);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--dark-green);
+  max-height: 14em;
+}
+
+.transaction-history {
+  flex: 2;
+  background-color: #f9f9f9;
+  color: black;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--green);
+  max-height: 600px;
+  overflow-y: auto;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.transaction-history-dark {
+  background-color: #1e1e1e !important;
+  color: white !important;
+  border-color: #333;
+}
+
+.balance {
+  font-size: 1.5rem;
+  color: var(--dark-green);
+  margin-top: 1rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.expense {
+  color: red;
+}

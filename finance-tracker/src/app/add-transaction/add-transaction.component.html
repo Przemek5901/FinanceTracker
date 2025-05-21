@@ -1,0 +1,36 @@
+<div class="form-container">
+  <h2>Dodaj transakcję</h2>
+  <form (ngSubmit)="submitTransaction()">
+    <div class="label-input">
+      <label> Kategoria:</label>
+      <input [(ngModel)]="form.category" name="category" required />
+    </div>
+
+    <div class="label-input">
+      <label> Kwota: </label>
+      <input type="number" [(ngModel)]="form.amount" name="amount" required />
+    </div>
+
+    <div class="label-input">
+      <label> Typ:</label>
+      <select [(ngModel)]="form.type" name="type" required>
+        <option value="income">Przychód</option>
+        <option value="expense">Wydatek</option>
+      </select>
+    </div>
+
+    <div class="label-input">
+      <label>Opis:</label>
+      <textarea
+        name="description"
+        [rows]="3"
+        [maxLength]="80"
+        [(ngModel)]="form.note"
+      ></textarea>
+    </div>
+
+    <button type="submit">Dodaj</button>
+  </form>
+
+  <p *ngIf="message">{{ message }}</p>
+</div>

@@ -1,0 +1,22 @@
+<div class="reports-container">
+  <h2>Wykres miesięczny</h2>
+
+  <div *ngIf="!incomes.length" class="loading">Ładowanie danych...</div>
+
+  <canvas
+    baseChart
+    [data]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [type]="barChartType"
+    (chartClick)="onChartClick($event)"
+    [height]="80"
+  >
+  </canvas>
+
+  <div class="summary" *ngIf="selectedMonth !== null">
+    <h3>Podsumowanie – {{ barChartLabels[selectedMonth] }}</h3>
+    <p>Przychody: {{ incomes[selectedMonth] }} zł</p>
+    <p>Wydatki: {{ expenses[selectedMonth] }} zł</p>
+  </div>
+</div>

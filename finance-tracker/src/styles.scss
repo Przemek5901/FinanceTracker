@@ -1,0 +1,27 @@
+@import "ngx-toastr/toastr";
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  background-color: #faedd4;
+  color: #000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: white;
+}
+
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: black;
+}
+
+:root {
+  --green: #339966;
+  --dark-green: #2b6b4d;
+  --green-hov: #026149;
+}
+
+body.dark-mode {
+  --green: #4caf50;
+  --dark-green: #357a38;
+  --green-hov: #2e7d32;
+}

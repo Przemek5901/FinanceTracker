@@ -1,0 +1,25 @@
+<div class="dashboard-container">
+  <div class="account-summary">
+    <h2>Stan konta</h2>
+    <p>
+      Saldo: <strong>{{ summary.balance }} zł</strong>
+    </p>
+    <p>Przychody: {{ summary.income }} zł</p>
+    <p>Wydatki: {{ summary.expense }} zł</p>
+  </div>
+
+  <div
+    class="transaction-history"
+    [class.transaction-history-dark]="userService.isDarkMode()"
+  >
+    <h2>Historia transakcji</h2>
+    <ul>
+      <li *ngFor="let t of transactions">
+        <div>
+          <strong>{{ t.category }}</strong> – {{ t.date | date }}
+        </div>
+        <div [ngClass]="t.type">{{ t.amount }} zł</div>
+      </li>
+    </ul>
+  </div>
+</div>
