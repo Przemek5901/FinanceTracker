@@ -1,5 +1,5 @@
 <div class="reports-container">
-  <h2>Wykres miesięczny</h2>
+  <h2 [ngClass]="userService.isDarkMode() ? 'dark' : ''">Wykres miesięczny</h2>
 
   <div *ngIf="!incomes.length" class="loading">Ładowanie danych...</div>
 

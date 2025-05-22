@@ -36,7 +36,7 @@
         "/api/monthlyReports"
       ],
       "cacheConfig": {
-        "strategy": "freshness",
+        "strategy": "performance",
         "maxSize": 20,
         "maxAge": "1h",
         "timeout": "10s"

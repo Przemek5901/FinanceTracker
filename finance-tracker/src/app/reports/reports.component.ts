@@ -4,6 +4,7 @@ import { ChartConfiguration, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { TransactionService } from '../services/transaction.service';
 import { Subject, takeUntil } from 'rxjs';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-reports',
@@ -46,7 +47,10 @@ export class ReportsComponent implements OnInit, OnDestroy {
     ],
   };
 
-  constructor(private transactionService: TransactionService) {}
+  constructor(
+    private transactionService: TransactionService,
+    public userService: UserService
+  ) {}
 
   ngOnInit(): void {
     this.fetchChartData();

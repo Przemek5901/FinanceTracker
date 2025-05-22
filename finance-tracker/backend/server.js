@@ -74,7 +74,7 @@ app.post("/api/addTransaction", async (req, res) => {
 app.get("/api/recentTransactions", async (req, res) => {
   try {
     const recent = await Transaction.find().sort({ date: -1 }).limit(10);
-    res.set("Cache-Control", "public, max-age=3600"); // Już było
+    res.set("Cache-Control", "public, max-age=3600");
     res.json(recent);
   } catch (err) {
     console.error("Błąd przy pobieraniu ostatnich transakcji:", err);
@@ -93,7 +93,7 @@ app.get("/api/summary", async (req, res) => {
       .reduce((sum, t) => sum + t.amount, 0);
     const balance = income - expense;
 
-    res.set("Cache-Control", "public, max-age=3600"); // Dodano
+    res.set("Cache-Control", "public, max-age=3600");
     res.json({ balance, income, expense });
   } catch (err) {
     console.error("Błąd przy liczeniu salda:", err);
@@ -119,7 +119,7 @@ app.get("/api/monthlyReports", async (req, res) => {
       }
     }
 
-    res.set("Cache-Control", "public, max-age=3600"); // Dodano
+    res.set("Cache-Control", "public, max-age=3600");
     res.json(monthlyData);
   } catch (err) {
     console.error("Błąd raportu miesięcznego:", err);

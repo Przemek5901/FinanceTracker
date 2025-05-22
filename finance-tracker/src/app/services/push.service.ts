@@ -36,9 +36,8 @@ export class PushService {
   private listenForPushMessages() {
     if (!this.swPush.isEnabled) return;
 
-    this.swPush.messages.subscribe((message) => {
-      // Obsłuż otrzymane wiadomości push (jeśli potrzebne)
-    });
+    // this.swPush.messages.subscribe((message) => {
+    // });
 
     this.swPush.notificationClicks.subscribe(({ notification }) => {
       if (notification?.data?.url) {
